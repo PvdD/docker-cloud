@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  modelui:
+    build: .
+    container_name: modelui
+    stdin_open: true
+    tty: true
+    ports:
+      - 5005:5000
+    volumes:
+      - modelvolume:/model
+
+volumes:
+  modelvolume:
+    external: true

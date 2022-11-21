@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  modeltrainer:
+    build: .
+    container_name: modeltrainer
+    stdin_open: true
+    tty: true
+    volumes:
+      - modelvolume:/model
+
+volumes:
+  modelvolume:
+    external: true
